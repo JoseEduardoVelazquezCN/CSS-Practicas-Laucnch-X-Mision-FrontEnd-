@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Vaccination</title>
 
+    <!--Fuente-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <!--CSS me-->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!--Fuente Font-->
@@ -18,37 +21,40 @@
     <script src="https://kit.fontawesome.com/a9902e7eaf.js" crossorigin="anonymous"></script>
     <!--https://fontawesome.com/search?q=check&o=r&m=free-->
 
-    <title>Landing Vaccination</title>
+
 </head>
 
 <body>
-    <header class="header">
-        <p>Vaccination</p>
-        <ul class="navbar">
-            <li><button>Hoax Buster</button></li>
-            <li><a href="">Regulation</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">Education</a></li>
+    <nav class="nav">
+        <input type="checkbox" name="" id="nav__checkbox" class="nav__checkbox">
+        <label for="nav__checkbox" class="nav__toggle">
+
+            <svg class="menu" viewBox="0 0 448 512" width="100" title="bars">
+                <path
+                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+
+
+            <svg class="close" viewBox="0 0 384 512" width="100" title="times">
+                <path
+                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
+            </svg>
+        </label>
+
+        <ul class="nav__menu">
+            <li class="menu__logo">
+                <img src="/assets/img/logo-vaccination.PNG" alt="logo-vaccination">
+            </li>
             <li><a href="">Database</a> </li>
-
+            <li><a href="">Education</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="">Regulation</a></li>
+            <li><button>Hoax Buster</button></li>
         </ul>
-    </header>
+    </nav>
+
     <section class="inicio">
-        <div class="modal">
-            <div class="arriba">
-                <p class="p4"><span class="fa-solid fa-location-dot"></span>Location</p>
-                <p class="p5"><span class="fa-regular fa-calendar-days"></span>Date</p>
-                <p class="p6"><span class="fa-solid fa-pencil"></span>Vaccine Type</p>
-                <button>Submit</button>
-            </div>
-            <div class="abajo">
-                <p class="p7">Jakerta Utara</p>
-                <p class="p8">08 July 2021</p>
-                <p class="p9">Moderna</p>
-            </div>
 
-
-        </div>
 
         <div class="info">
             <h1>Fight Virus <br> Width Vaccines</h1>
@@ -69,7 +75,24 @@
         <div class="img-enfermera">
             <!--Aqui va una imagen de fondo "la enfermera"-->
         </div>
+        <!-- -->
+        <div class="modal">
+            <div class="arriba">
+                <p class="p4"><span class="fa-solid fa-location-dot"></span>Location</p>
+                <p class="p5"><span class="fa-regular fa-calendar-days"></span>Date</p>
+                <p class="p6"><span class="fa-solid fa-pencil"></span>Vaccine Type</p>
+
+            </div>
+
+            <div class="abajo">
+                <p class="p7">Jakerta Utara</p>
+                <p class="p8">08 July 2021</p>
+                <p class="p9">Moderna</p>
+            </div>
+            <button>Submit</button>
+        </div>
     </section>
+
     <section class="slider">
         <h1>.</h1>
         <h1>.</h1>
@@ -80,53 +103,65 @@
         <h1>.</h1>
         <h1>.</h1>
     </section>
+
     <section class="whyShould">
         <div class="titulo">
             <h1>Why should I vaccine?</h1>
-            <p>In order to avoid any doubts about getting th COVID-19 <br>
-                vaccine, identify the following 4 benefits of COVID-19 <br>
+            <p>In order to avoid any doubts about
+                getting the COVID-19 vaccine, identify
+                the following 4 benefits of COVID-19
                 vaccination.
             </p>
         </div>
     </section>
+
     <section class="cards">
         <div class="cardMinimize">
             <i class="fa-solid fa-minimize"></i>
             <h1>Minimize the <br> spread of viruses</h1>
-            <p>Vaccine has been proven <br>
-                effective to prevent someone <br>
-                from getting infected with <br>
+            <p>Vaccine has been proven
+                effective to prevent someone
+                from getting infected with
                 Coronoavirus
             </p>
         </div>
         <div class="cardForming">
             <i class="fa-solid fa-shield-halved"></i>
             <h1>Forming <br> antibodies</h1>
-            <p>COVId-19 vaccine proven to <br>
-                help shape antibody <br>
-                response for immune system <br>
+            <p>COVId-19 vaccine proven to
+                help shape antibody
+                response for immune system
 
             </p>
         </div>
         <div class="cardProtecting">
             <i class="fa-solid fa-people-group"></i>
             <h1>Protecting <br> people nearby</h1>
-            <p>The benefits of COVID-19 <br>
-                vaccination are the vaccine <br>
-                that we get can atso help <br>
+            <p>The benefits of COVID-19
+                vaccination are the vaccine
+                that we get can atso help
                 protect people around us
             </p>
         </div>
         <div class="cardCreating">
             <i class="fa-solid fa-minimize"></i>
             <h1>Creating group <br> immunity</h1>
-            <p>COVID-19 vaccination is also <br>
-                beneficial for creating group <br>
+            <p>COVID-19 vaccination is also
+                beneficial for creating group
                 immunity or herd immunity
             </p>
         </div>
     </section>
+
     <section class="img2">
+        <div class="texto-Version-movil">
+            <h1>Preparations Before Vaccine</h1>
+            <p>the success of vaccines is strongly influenced by the
+                strenght of the body's immune system. Therefore, there are
+                several things that can be tried to make the COVID-19
+                vaccine work :
+            </p>
+        </div>
         <div class="imgEnfermera2">
             <!--Aqui va la imagen 2 "landingVacunación_section2"-->
         </div>
@@ -191,7 +226,20 @@
             </div>
         </div>
     </section>
+
+
     <section class="img3">
+        <div class="texto3-version-movil">
+            <h1>Emergency Contact</h1>
+            <p>Contact one of the contacts below if you or your family feel
+                unwell and have similar symptoms such as Covid-19, make
+                sure you also take care of yourself before reporting to us:
+            </p>
+        </div>
+        <div class="imgEnfermero-version-movil">
+            <!--Aqui va la imagen 3 "landingVacunación_section3"-->
+        </div>
+
         <div class="texto3">
             <h1>Emergency Contact</h1>
             <p>Contact one of the contacts below if you or your family feel<br>
@@ -232,21 +280,56 @@
             </div>
 
         </div>
+
+        <div class="cajas-version-movil">
+            <div class="cajita">
+                <div class="infor">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>Call <br> <span>021.123.145.14</span></p>
+                </div>
+                <button>Call Now</button>
+            </div>
+            <div class="cajita">
+                <div class="infor">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <p>Chat<br> <span>021.123.145.14</span></p>
+                </div>
+                <button>Chat Now</button>
+            </div>
+            <div class="cajita">
+                <div class="infor">
+                    <i class="fa-solid fa-video"></i>
+                    <p>Video Call <br> <span>021.123.145.14</span></p>
+                </div>
+                <button class="C-3">Video Call Now</button>
+            </div>
+            <div class="cajita">
+                <div class="infor">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Message<br> <span>021.123.145.14</span></p>
+                </div>
+                <button class="C-4">Message Now</button>
+            </div>
+        </div>
+
         <div class="imgEnfermero">
             <!--Aqui va la imagen 3 "landingVacunación_section3"-->
         </div>
     </section>
+
+
     <footer>
         <div class="arriba">
             <div class="titulo">
                 <h1>Vaccination</h1>
-                <p>Our goal is to help the <br>
-                    world free from the <br>
+                <p>Our goal is to help the 
+                    world free from the 
                     ongoing pandemic</p>
             </div>
             <div class="lista">
                 <div class="L-1">
                     <h1>About</h1>
+                    <hr class="line">
                     <ul>
                         <li>About US</li>
                         <li>Features</li>
@@ -255,6 +338,7 @@
                 </div>
                 <div class="L-2">
                     <h1>Company</h1>
+                    <hr class="line">
                     <ul>
                         <li>How We Work?</li>
                         <li>Capital</li>
@@ -263,6 +347,7 @@
                 </div>
                 <div class="L-3">
                     <h1>Support</h1>
+                    <hr class="line">
                     <ul>
                         <li>FAQs</li>
                         <li>Support Center</li>
@@ -275,9 +360,14 @@
         <div class="abajo">
             <p class="p1">@2022 Vaccination. All rights reserved</p>
             <p class="p2">Terms & Agreements   Privacy policy</p>
+            
+        </div>
+        <div class="autor">
+            <a href="https://github.com/JoseEduardoVelazquezCN" target="_blank" class="by">By: <i class="fa-brands fa-github"> </i> @JoseEduardoVelazquezCN</a>
         </div>
     </footer>
-    <script src="/assets/js/action.js"></script>
+
+    <script src="./assets/js/action.js"></script>
 </body>
 
 </html>

@@ -1,55 +1,83 @@
+/* ESTILOS PRINCIPALES + NAVBAR  INICIO*/
+:root {
+    --primary: #ffffff;
+    --white: rgb(152, 152, 152);
+    --gray: rgb(19, 73, 236);
+}
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-
+    box-sizing: border-box;
 }
 
 body {
-    /*background-color: aliceblue;*/
-    background-color: #FFFF;
-}
-
-/*SECTION CLASS-HEADER INICIO*/
-.header .navbar {
-    margin-top: 15px;
-    margin-right: 95px;
-}
-
-.header p {
-    float: left;
-    margin-top: 15px;
-    margin-left: 95px;
-    font-weight: bold;
-    font-size: 20px;
-    color: rgb(19, 73, 236);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--primary);
+    height: 100vh;
 }
 
 
-.header .navbar li {
-    float: right;
-    margin-right: 25px;
-    margin-top: 10px;
-    list-style: none;
-
+.nav {
+    border-bottom: 1px solid var(--gray);
 }
 
-.header .navbar a {
-    float: right;
-    margin-right: 25px;
-    margin-top: 10px;
-    list-style: none;
+.nav__checkbox {
+    display: none;
+}
+
+.nav__toggle {
+    position: absolute;
+    cursor: pointer;
+
+    right: 10px;
+}
+
+.nav__toggle svg {
+    width: 1rem;
+    fill: var(--white);
+}
+
+.nav__toggle .close {
+    display: none;
+}
+
+.nav__toggle .close,
+.nav__toggle .menu {
+    margin-top: 0.3rem;
+}
+
+.nav__menu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.nav__menu li {
+    display: none;
+    list-style-type: none;
+}
+
+.nav__menu li:first-child {
+    display: block;
+    margin-right: auto;
+}
+
+.nav__menu a {
+    color: inherit;
+    font-size: 1.1rem;
     text-decoration: none;
-    color: rgb(152, 152, 152);
-    font-weight: bold;
 }
 
-.header .navbar a:hover {
+.nav__menu a:hover {
     color: rgb(19, 73, 236);
-    font-weight: bold;
 }
 
-.header .navbar li button {
+.nav__menu button {
     color: #FFFF;
     background-color: rgb(19, 73, 236);
     border: 1px solid rgb(19, 73, 236);
@@ -62,13 +90,51 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-.header .navbar li button:hover {
+.nav__menu button:hover {
     color: rgb(19, 73, 236);
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(19, 73, 236);
 }
 
-/*SECTION CLASS-HEADER FIN*/
+.menu__logo {
+    height: 30px;
+}
+
+.menu__logo img {
+    height: 100%;
+}
+
+#nav__checkbox:checked~ul.nav__menu li {
+    display: block;
+}
+
+#nav__checkbox:checked~label.nav__toggle .close {
+    display: block;
+}
+
+#nav__checkbox:checked~label.nav__toggle .menu {
+    display: none;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__menu {
+        flex-direction: row;
+    }
+
+    .nav__menu li {
+        display: block;
+    }
+}
+
+
+/* ESTILOS PRINCIPALES + NAVBAR  FIN*/
+
 
 /*SECTION CLASS-INICIO INICIO*/
 .inicio {
@@ -295,13 +361,155 @@ body {
     background-image: url(/assets/img/header.webp);
 }
 
+@media only screen and (max-width: 600px) {
+    .inicio {
+        width: 100%;
+        display: flex;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .inicio .info {
+        width: 90%;
+    }
+
+    .inicio .info h1 {
+        font-size: 45px;
+        margin-left: 20px;
+        margin-top: 15px;
+        margin-right: 0px;
+    }
+
+    .inicio .info p {
+        font-size: 15px;
+        margin-left: 25px;
+        margin-top: 15px;
+        margin-right: 0px;
+        line-height: 1.3;
+    }
+
+    .inicio .info .text-icono {
+        width: 100%;
+    }
+
+    .inicio .info .text-icono .p1 {
+        font-size: 15px;
+        width: 45%;
+    }
+
+    .inicio .info .text-icono .p2 {
+        font-size: 14px;
+        width: 50%;
+    }
+
+    .inicio .info .text-icono .p1 span {
+        font-size: 15px;
+    }
+
+    .inicio .info .text-icono .p2 span {
+        font-size: 15px;
+    }
+
+    .inicio .img-enfermera {
+        position: relative;
+        width: 600px;
+        height: 650px;
+    }
+
+    .inicio .modal {
+        position: absolute;
+        justify-content: center;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0px;
+        padding-top: 15px;
+    }
+
+    .inicio .modal .arriba {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .inicio .modal .arriba .p4 {
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+
+    .inicio .modal .arriba .p5 {
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+
+    .inicio .modal .arriba .p6 {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .inicio .modal .arriba .p4 span {
+        margin-left: 0px;
+        margin-right: 5px;
+    }
+
+    .inicio .modal .arriba .p5 span {
+        margin-left: 0px;
+        margin-right: 5px;
+    }
+
+    .inicio .modal .arriba .p6 span {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .inicio .modal button {
+        margin-left: 0px;
+        margin-top: 25px;
+    }
+
+
+    .inicio .modal .abajo {
+
+        margin-left: 0px;
+        margin-right: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .inicio .modal .abajo .p7 {
+        margin-left: -10px;
+        margin-right: 30px;
+        font-size: 15px;
+    }
+
+    .inicio .modal .abajo .p8 {
+        margin-left: 0px;
+        margin-right: 30px;
+        font-size: 15px;
+    }
+
+    .inicio .modal .abajo .p9 {
+        margin-left: 0px;
+        margin-right: -10px;
+        font-size: 15px;
+    }
+
+}
+
 /*SECTION CLASS-INICIO FIN*/
 
 /*SECTION CLASS-SLIDER INICIO*/
 .slider {
     width: 100%;
-    height: 850px;
-    margin-top: 90px;
+    height: auto;
+    margin-top: 0px;
     background-image: url(/assets/img/slider.png);
     height: auto;
     background-size: cover;
@@ -309,12 +517,24 @@ body {
     color: rgb(255, 255, 255);
 }
 
-/*SECTION CLASS-SLIDER FIN*/
+@media only screen and (max-width: 600px) {
+    .slider {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-image: url(/assets/img/slider.png);
+        height: auto;
+        background-size: auto;
+        background-position: center;
+        color: rgb(255, 255, 255);
+    }
+}
 
+/*SECTION CLASS-SLIDER FIN*/
 
 /*SECTION CLASS-WHYSHOULD INICIO*/
 .whyShould {
-
     width: 100%;
 }
 
@@ -333,6 +553,31 @@ body {
     font-size: 22px;
     /*separacion del texto en vertical*/
     line-height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+    .whyShould {
+        width: 100%;
+    }
+
+    .whyShould h1 {
+        font-weight: bold;
+        color: rgb(15, 59, 98);
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 30px;
+    }
+
+    .whyShould p {
+        color: rgb(85, 85, 85);
+        margin-top: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 20px;
+        /*separacion del texto en vertical*/
+        line-height: 1.4;
+        text-align: justify;
+    }
 }
 
 /*SECTION CLASS-WHYSHOULD FIN*/
@@ -516,7 +761,205 @@ body {
     margin-bottom: 15px;
 }
 
+@media only screen and (max-width: 600px) {
+    .cards {
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 45px;
+    }
+
+
+    .cards .cardMinimize {
+        background-color: rgb(255, 255, 255);
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        border-radius: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .cards .cardMinimize:hover {
+        background-color: rgb(232, 248, 250);
+        box-shadow: 0 8px 32px 0 rgba(0, 106, 255, 0.37);
+    }
+
+    .cards .cardMinimize i {
+        margin-left: 15px;
+        margin-top: 15px;
+        font-size: 25px;
+        color: rgb(19, 73, 236);
+        padding: 10px 10px 10px 10px;
+        box-shadow: 0px 15px rgb(255, 217, 0, 0.05);
+        background-color: rgb(15, 59, 98, 0.1);
+        border-radius: 10px;
+    }
+
+    .cards .cardMinimize h1 {
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: 18px;
+    }
+
+    .cards .cardMinimize p {
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-align: justify;
+    }
+
+
+    .cards .cardForming {
+        background-color: rgb(255, 255, 255);
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        border-radius: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .cards .cardForming:hover {
+        background-color: rgb(232, 248, 250);
+        box-shadow: 0 8px 32px 0 rgba(0, 106, 255, 0.37);
+    }
+
+    .cards .cardForming i {
+        margin-left: 15px;
+        margin-top: 15px;
+        font-size: 25px;
+        color: rgb(19, 73, 236);
+        padding: 10px 10px 10px 10px;
+        box-shadow: 0px 15px rgb(255, 217, 0, 0.05);
+        background-color: rgb(15, 59, 98, 0.1);
+        border-radius: 10px;
+    }
+
+    .cards .cardForming h1 {
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: 18px;
+    }
+
+    .cards .cardForming p {
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: justify;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+
+    .cards .cardProtecting {
+        background-color: rgb(255, 255, 255);
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        border-radius: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+    }
+
+    .cards .cardProtecting:hover {
+        background-color: rgb(232, 248, 250);
+        box-shadow: 0 8px 32px 0 rgba(0, 106, 255, 0.37);
+    }
+
+    .cards .cardProtecting i {
+        margin-left: 15px;
+        margin-top: 15px;
+        font-size: 25px;
+        color: rgb(19, 73, 236);
+        padding: 10px 10px 10px 10px;
+        box-shadow: 0px 15px rgb(255, 217, 0, 0.05);
+        background-color: rgb(15, 59, 98, 0.1);
+        border-radius: 10px;
+    }
+
+    .cards .cardProtecting h1 {
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: 18px;
+    }
+
+    .cards .cardProtecting p {
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: justify;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+
+    .cards .cardCreating {
+        background-color: rgb(255, 255, 255);
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        border-radius: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .cards .cardCreating:hover {
+        background-color: rgb(232, 248, 250);
+        box-shadow: 0 8px 32px 0 rgba(0, 106, 255, 0.37);
+    }
+
+    .cards .cardCreating i {
+        margin-left: 15px;
+        margin-top: 15px;
+        font-size: 25px;
+        color: rgb(19, 73, 236);
+        padding: 10px 10px 10px 10px;
+        box-shadow: 0px 15px rgb(255, 217, 0, 0.05);
+        background-color: rgb(15, 59, 98, 0.1);
+        border-radius: 10px;
+    }
+
+    .cards .cardCreating h1 {
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: 18px;
+    }
+
+    .cards .cardCreating p {
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: justify;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+}
+
 /*SECTION CLASS-CARDS FIN*/
+
 
 /*SECTION CLASS-img2 INICIO*/
 .img2 {
@@ -525,14 +968,19 @@ body {
 
 }
 
+.img2 .texto-Version-movil {
+    display: none;
+}
+
 .img2 .imgEnfermera2 {
-    width: 50%;
-    height: 700px;
+    position: relative;
+    width: 600px;
+    height: 650px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-image: url(/assets/img/landingVacunación_section2.png);
-    margin-top: 220px;
+
 }
 
 .img2 .texto h1 {
@@ -559,7 +1007,7 @@ body {
 .img2 .texto .acordeon1 {
     margin-left: 70px;
     margin-right: 50px;
-   
+
     background-color: #ffffff;
 }
 
@@ -580,7 +1028,7 @@ body {
     color: rgb(19, 73, 236);
 }
 
-.img2 .texto .acordeon1 .content{
+.img2 .texto .acordeon1 .content {
     display: none;
     overflow: hidden;
     background-color: #ffffff;
@@ -592,11 +1040,12 @@ body {
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.img2 .texto .acordeon1 .content p{
+
+.img2 .texto .acordeon1 .content p {
     font-size: 20px;
     color: rgb(0, 0, 0);
     color: rgb(85, 85, 85);
-    margin: 5px 20px 0px 5px;  
+    margin: 5px 20px 0px 5px;
 }
 
 .img2 .texto .acordeon1 i {
@@ -618,6 +1067,140 @@ body {
     border-radius: 10px;
 }
 
+@media only screen and (max-width: 600px) {
+    .img2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+
+    }
+
+    .img2 .texto-Version-movil {
+        display: block;
+    }
+
+    .img2 .texto-Version-movil h1 {
+        font-weight: bold;
+        color: rgb(15, 59, 98);
+        margin-top: 90px;
+        margin-left: 20px;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    .img2 .texto-Version-movil p {
+        color: rgb(85, 85, 85);
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 18px;
+        /*separacion del texto en vertical*/
+        line-height: 30px;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+
+    .img2 .imgEnfermera2 {
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(/assets/img/landingVacunación_section2.png);
+        margin-top: 5px;
+    }
+
+    .img2 .texto {
+        width: 100%;
+    }
+
+    .img2 .texto h1 {
+        /*font-weight: bold;
+        color: rgb(15, 59, 98);
+        margin-top: 90px;
+        margin-left: 50px;
+        font-size: 40px;
+        margin-top: 150px;*/
+        display: none;
+    }
+
+    .img2 .texto p {
+        /* color: rgb(85, 85, 85);
+        margin-top: 50px;
+        margin-left: 40px;
+        font-size: 22px;*/
+        /*separacion del texto en vertical*/
+        /*line-height: 30px;
+        margin-bottom: 70px;*/
+        display: none;
+    }
+
+    .img2 .texto .acordeon1 {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #ffffff;
+    }
+
+    .img2 .texto .acordeon1 .acordeon {
+        background-color: #ffffff;
+        color: rgb(15, 59, 98);
+        font-weight: bold;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .img2 .texto .acordeon1 .acordeon:hover {
+        color: rgb(19, 73, 236);
+    }
+
+    .img2 .texto .acordeon1 .content {
+        display: none;
+        overflow: hidden;
+        background-color: #ffffff;
+
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 2px 4px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .img2 .texto .acordeon1 .content p {
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        color: rgb(85, 85, 85);
+        margin: 5px 20px 0px 5px;
+    }
+
+    .img2 .texto .acordeon1 i {
+        float: right;
+        font-size: 25px;
+        font-size: 25px;
+        padding: 10px 10px 10px 10px;
+        box-shadow: 0px 15px rgb(255, 217, 0, 0.05);
+        background-color: rgb(15, 59, 98, 0.1);
+        border-radius: 10px;
+    }
+
+    .img2 .texto .acordeon1 span {
+        font-size: 25px;
+        color: rgb(19, 73, 236);
+        padding: 10px 10px 10px 10px;
+        box-shadow: 0px 15px rgb(255, 217, 0, 0.05);
+        background-color: rgb(15, 59, 98, 0.1);
+        border-radius: 10px;
+    }
+
+}
+
 /*SECTION CLASS-img2 FIN*/
 
 /*SECTION CLASS-img3 INICIO*/
@@ -625,10 +1208,20 @@ body {
     width: 100%;
     display: inline-flex;
 }
-.img3 .texto3{
+
+.img3 .imgEnfermero-version-movil {
+    display: none;
+}
+
+.img3 .texto3-version-movil {
+    display: none;
+}
+
+.img3 .texto3 {
     width: 60%;
     justify-content: center;
 }
+
 .img3 .texto3 h1 {
     font-weight: bold;
     color: rgb(15, 59, 98);
@@ -647,14 +1240,20 @@ body {
     line-height: 30px;
     margin-bottom: 70px;
 }
+
 /*cajitas contacto*/
 /******************/
-.img3 .texto3 .cajas{
+.img3 .cajas-version-movil {
+    display: none;
+}
+
+.img3 .texto3 .cajas {
     display: inline-flex;
     margin-left: 120px;
     margin-bottom: 35px;
 }
-.img3 .texto3 .cajita{
+
+.img3 .texto3 .cajita {
     background-color: rgb(255, 255, 255);
     width: 41%;
     margin-right: 80px;
@@ -664,14 +1263,16 @@ body {
     -webkit-backdrop-filter: blur(2.5px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    
+
 }
-.img3 .texto3 .cajita .infor{
+
+.img3 .texto3 .cajita .infor {
     display: inline-flex;
     margin-top: 25px;
     margin-left: 20px;
 }
-.img3 .texto3 .cajita .infor i{
+
+.img3 .texto3 .cajita .infor i {
     color: blue;
     height: 40px;
     font-size: 35px;
@@ -680,21 +1281,24 @@ body {
     background-color: rgb(15, 59, 98, 0.1);
     border-radius: 10px;
 }
-.img3 .texto3 .cajita .infor p{
+
+.img3 .texto3 .cajita .infor p {
     color: rgb(15, 59, 98);
     margin-left: 10px;
     font-weight: bold;
     font-size: 25px;
     margin-top: 1px;
     margin-left: 25px;
-    
+
 }
-.img3 .texto3 .cajita .infor span{
+
+.img3 .texto3 .cajita .infor span {
     color: rgb(85, 85, 85);
     margin-left: 1px;
     font-size: 15px;
     font-weight: lighter;
 }
+
 .img3 .texto3 .cajita button {
     color: #FFFF;
     font-size: 15px;
@@ -738,6 +1342,7 @@ body {
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(19, 73, 236);
 }
+
 .img3 .texto3 .cajita .C-4 {
     color: #FFFF;
     font-size: 15px;
@@ -770,94 +1375,422 @@ body {
     margin-top: 220px;
 }
 
+@media only screen and (max-width: 600px) {
+    .img3 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
+    .img3 .texto3-version-movil {
+        display: block;
+        width: 100%;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img3 .texto3-version-movil h1 {
+        font-weight: bold;
+        color: rgb(15, 59, 98);
+        margin-top: 90px;
+        margin-left: 20px;
+        font-size: 30px;
+        margin-top: 40px;
+    }
+
+    .img3 .texto3-version-movil p {
+        color: rgb(85, 85, 85);
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 18px;
+        /*separacion del texto en vertical*/
+        line-height: 30px;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+
+    .img3 .texto3 h1 {
+        display: none;
+    }
+
+    .img3 .texto3 p {
+        display: none;
+    }
+
+    .img3 .imgEnfermero {
+        display: none;
+    }
+
+    .img3 .imgEnfermero-version-movil {
+        display: block;
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(/assets/img/landingVacunación_section3.png);
+        margin-top: 10px;
+    }
+
+
+    /*cajitas contacto*/
+    /******************/
+    .img3 .texto3 .cajas {
+        display: none;
+    }
+
+    .img3 .cajas-version-movil {
+        width: 100%;
+        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img3 .cajas-version-movil .cajita {
+        width: 80%;
+        display: block;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 4px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .img3 .cajas-version-movil .cajita:hover {
+        background-color: rgba(0, 144, 206, 0.099)
+    }
+
+    .img3 .cajas-version-movil .cajita .infor {
+        width: 85%;
+        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 9px;
+    }
+
+    .img3 .cajas-version-movil .cajita .infor i {
+        color: blue;
+        margin-right: 10px;
+
+
+        font-size: 35px;
+        padding: 10px 10px 10px 10px;
+        box-shadow: 0px 15px rgb(255, 217, 0, 0.05);
+        background-color: rgb(15, 59, 98, 0.1);
+        border-radius: 10px;
+    }
+
+    .img3 .cajas-version-movil .cajita .infor p {
+        color: rgb(15, 59, 98);
+        font-weight: bold;
+        font-size: 17px;
+
+    }
+
+    .img3 .cajas-version-movil .cajita .infor span {
+        color: rgb(85, 85, 85);
+        font-size: 15px;
+        font-weight: lighter;
+    }
+
+    .img3 .cajas-version-movil .cajita button {
+        width: 100%;
+        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 2px;
+        padding-right: 2px;
+        margin-left: 65px;
+        margin-right: 5px;
+
+        color: #FFFF;
+        font-size: 15px;
+        background-color: rgb(19, 73, 236);
+        border: 1px solid rgb(19, 73, 236);
+        box-shadow: rgb(19, 73, 236, 0.9);
+        border-radius: 8%;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+
+    .img3 .cajas-version-movil .cajita button:hover {
+        color: rgb(19, 73, 236);
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(19, 73, 236);
+    }
+
+}
 
 
 /*SECTION CLASS-img3 FIN*/
 
 
+
 /*FOOTER INICIO*/
-footer{
+footer {
     width: 100%;
-    
     padding-top: 30px;
     margin-top: 100px;
     background-color: rgb(240, 241, 255);
 }
-footer .arriba{
+
+footer .arriba {
     width: 100%;
     display: inline-flex;
 }
-footer .titulo{
+
+footer .titulo {
     width: 50%;
     margin-left: 100px;
 }
-footer .titulo h1{
+
+footer .titulo h1 {
     margin-top: 15px;
     font-weight: bold;
     font-size: 25px;
     color: rgb(19, 73, 236);
 }
-footer .titulo p{
+
+footer .titulo p {
     color: rgb(85, 85, 85);
     margin-top: 15px;
     font-size: 13px;
     /*separacion del texto en vertical*/
     line-height: 20px;
 }
-footer .lista{
+
+footer .lista {
     display: inline-flex;
     width: 50%;
     line-height: 50px;
 }
-footer .lista .L-1 ul{
+
+footer .lista .L-1 ul {
     margin-right: 100px;
     list-style: none;
     font-weight: lighter;
 }
-footer .lista .L-1 h1{
+
+footer .lista .L-1 h1 {
     margin-top: 11px;
     font-weight: bold;
     font-size: 20px;
     color: rgba(15, 51, 158, 0.995);
 }
-footer .lista .L-2 ul{
+
+footer .lista .L-2 ul {
     margin-right: 100px;
     list-style: none;
     font-weight: lighter;
 }
-footer .lista .L-2 h1{
+
+footer .lista .L-2 h1 {
     margin-top: 11px;
     font-weight: bold;
     font-size: 20px;
     color: rgba(15, 51, 158, 0.995);
 }
-footer .lista .L-3 ul{
+
+footer .lista .L-3 ul {
     margin-right: 60px;
     list-style: none;
     font-weight: lighter;
 }
-footer .lista .L-3 h1{
+
+footer .lista .L-3 h1 {
     margin-top: 11px;
     font-weight: bold;
     font-size: 20px;
     color: rgba(15, 51, 158, 0.995);
 }
-footer .abajo{
+
+footer .abajo {
     width: 100%;
     margin-top: 50px;
     background-color: rgb(240, 241, 255);
     display: inline-flex;
     margin-bottom: 10px;
 }
-footer .abajo .p1{
+
+footer .abajo .p1 {
     margin-left: 100px;
     font-weight: bold;
     color: rgb(167, 167, 167);
 }
-footer .abajo .p2{
+
+footer .abajo .p2 {
     margin-left: 600px;
     font-weight: bold;
     color: rgb(167, 167, 167);
 }
+
+@media only screen and (max-width: 600px) {
+    footer .arriba {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        padding: 0px;
+    }
+
+    footer .arriba .titulo {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+    }
+
+    footer .arriba .titulo h1 {
+        width: 100%;
+        margin-left: 20px;
+        margin-right: auto;
+        margin-top: 0px;
+        font-weight: bold;
+        font-size: 35px;
+        color: rgb(19, 73, 236);
+    }
+
+    footer .arriba .titulo p {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 10px;
+        color: rgb(85, 85, 85);
+        font-size: 22px;
+        text-align: justify;
+        line-height: 1.5;
+    }
+
+    footer .arriba .lista {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        margin-left: 44px;
+        margin-right: 0px;
+    }
+
+    footer .arriba .lista .L-1 {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    footer .arriba .lista .L-1 .line {
+        width: 100%;
+        height: 10px;
+        background-color: blue;
+        border-radius: 40px;
+    }
+
+    footer .arriba .lista .L-1 ul {
+        font-weight: 400;
+    }
+
+    footer .arriba .lista .L-1 ul li:hover {
+        color: blue;
+    }
+
+    footer .arriba .lista .L-2 .line {
+        width: 100%;
+        height: 10px;
+        background-color: blue;
+        border-radius: 40px;
+    }
+
+    footer .arriba .lista .L-2 ul {
+        font-weight: 400;
+    }
+
+    footer .arriba .lista .L-2 ul li:hover {
+        color: blue;
+    }
+
+    footer .arriba .lista .L-3 .line {
+        width: 100%;
+        height: 10px;
+        background-color: blue;
+        border-radius: 40px;
+    }
+
+    footer .arriba .lista .L-3 ul {
+        font-weight: 400;
+    }
+
+    footer .arriba .lista .L-3 ul li:hover {
+        color: blue;
+    }
+
+    footer .abajo {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0;
+    }
+
+    footer .abajo .p1 {
+        width: 90%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 5px;
+        padding: 0;
+        font-weight: bold;
+        color: rgb(167, 167, 167);
+    }
+
+    footer .abajo .p2 {
+        width: 90%;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0;
+        font-weight: bold;
+        color: rgb(167, 167, 167);
+    }
+
+    footer .abajo .p2:hover {
+        color: blue;
+    }
+
+    footer .autor {
+        background-color: black;
+        padding: 20px;
+    }
+
+    footer .autor .by {
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        color: rgb(167, 167, 167);
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+
+    footer .autor .by:hover {
+        color: aqua;
+    }
+}
+
 /*FOOTER FIN*/
